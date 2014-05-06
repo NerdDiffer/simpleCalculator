@@ -2,7 +2,10 @@ simpleCalculator
 ================
 
 a very simple calculator. basic arithmetic only. try it with your keyboard!
+
 my work from The Odin Project: <http://www.theodinproject.com/javascript-and-jquery/on-screen-calculator>
+
+try it out live: <http://www.rafaelespinoza.com/simpleCalculator/index.html>
 
 ###notable keyboard shortcuts:
 * **'delete' key**: clear the screen and start a new expression
