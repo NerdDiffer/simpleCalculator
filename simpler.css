@@ -61,7 +61,6 @@ div#display {
 div.button {
   width:88px;
   height:108px;
-  line-height: 108px;
   border: 1px solid black;
   text-align: center;
   display: table-cell;
