@@ -76,27 +76,43 @@ $(document).ready(function() {
 
 	var doWhenPressed = function(e) {
 		var validEvents = [37, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
-		if (validEvents.indexOf(e.keyCode) < 0) {
+		if (validEvents.indexOf(e.charCode) < 0) {
 			alert('invalid input. string resetting');
 			input = '';
 			$('div#display').empty();
 		} else {
-			input += String.fromCharCode(e.keyCode);
-			console.log(input);
+
+			// works for chrome:
+			//input += String.fromCharCode(e.keyCode);
+			// works for chrome & firefox:
+			input += String.fromCharCode(e.charCode)
+			//console.log(input);
 			$('div#display').text(input);
 		}
 	};
+
 	$(document).on('keypress', function(event) {
-		var eType = event.type;
-		var eWhich = event.which;
-		var eCharCode = event.charCode;
-		var eKeyCode = event.keyCode;
-		var string_fcc = String.fromCharCode(eKeyCode);
-		//console.log(string_fcc);
-		//console.log('.which: ' + eWhich + ' .charCode: ' + eCharCode + '.keyCode: ' + eKeyCode)
-		//console.log('pressed: ' + string_fcc + " " + eType + ": " + eWhich);
-		
-		switch (event.keyCode) {
+		function logTests() {
+			console.log('**************');
+			var eType = event.type;
+			var eWhich = event.which;
+
+			var eCharCode = event.charCode;
+			var eKeyCode = event.keyCode;
+			console.log('event.charCode: ' + eCharCode);
+			console.log('event.keyCode: ' + eKeyCode);
+
+			var string_fcc_charCode = String.fromCharCode(eCharCode);
+			var string_fcc_keyCode = String.fromCharCode(eKeyCode);
+			console.log('String.fromCharCode(charCode):' + string_fcc_charCode);
+			console.log('String.fromCharCode(keyCode): ' + string_fcc_keyCode);
+
+			//console.log('.which: ' + eWhich + ' .charCode: ' + eCharCode + '.keyCode: ' + eKeyCode)
+			//console.log('pressed: ' + string_fcc + " " + eType + ": " + eWhich);
+		}
+		logTests();		
+
+		switch (event.charCode) {
 			case 13: // enter (=)
 				var answer = calculate(input);
 				console.log(answer);
