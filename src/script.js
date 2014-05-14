@@ -70,9 +70,15 @@ function calculate(str) {
 	}
 };
 
-// anything inside here will handle calculations and user interaction
+
+
+// anything inside here will handle user interaction
 $(document).ready(function() {
 	var input = '';
+	function validateInput(e) {
+		var validEvents = [0, 8, 13, 37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 61, 63, 127];
+		return validEvents.indexOf(e.which) >= 0 ? true: false;
+	}
 	
 /* mouse events */
 
@@ -119,70 +125,70 @@ $(document).ready(function() {
 
 /* keyboard events */
 
-	var doWhenPressed = function(e) {
-		var validEvents = [37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
-		if (validEvents.indexOf(e.which) < 0) {
+	// for console logging keyboard events
+	function logTests() {
+		console.log('**************');
+		var eType = event.type;
+
+		var eWhich = event.which;
+		var eCharCode = event.charCode;
+		var eKeyCode = event.keyCode;
+		console.log('event.which: ' + eWhich);
+		console.log('event.charCode: ' + eCharCode);
+		console.log('event.keyCode: ' + eKeyCode);
+		//console.log('.which: ' + eWhich + ' .charCode: ' + eCharCode + '.keyCode: ' + eKeyCode)
+
+		var string_fcc_charCode = String.fromCharCode(eCharCode);
+		var string_fcc_keyCode = String.fromCharCode(eKeyCode);
+		console.log('String.fromCharCode(charCode):' + string_fcc_charCode);
+		console.log('String.fromCharCode(keyCode): ' + string_fcc_keyCode);
+	}
+
+	$(document).on('keypress', function(event) {
+		//logTests();		
+		if (validateInput(event)) {
+			switch (event.which) {
+				// = button
+				case 13: // FF: keypad enter (=). Chrome: enter key close to letters
+				case 61: // FF: enter key (close to letters). Chrome: enter key close to backspace
+					var answer = calculate(input);
+					console.log(answer);
+					$('div#display').text(answer);
+					input = '';
+					$('div#display').animate({
+						color: 'white',
+						backgroundColor: 'black'
+					})
+					break;
+
+				// clr button	
+				case 0: // delete key for Firefox
+				case 8: // backspace
+				case 127: // how chrome recognizes delete key
+					input = '';
+					console.log('cleared. input.length = ' + input.length);
+					$('div#display').empty();
+					$('div#display').animate({
+						color: 'black',
+						backgroundColor: 'white'
+					});	
+					break;	
+
+				// for help
+				case 63: // Question Mark ? key
+					//displayHelp();
+					break;
+
+				// any other valid key
+				default:
+					input += String.fromCharCode(event.which)
+					$('div#display').text(input);
+					break;
+			}
+		} else {
 			alert('invalid input. string resetting');
 			input = '';
 			$('div#display').empty();
-		} else {
-			input += String.fromCharCode(e.which)
-			$('div#display').text(input);
-		}
-	};
-
-	$(document).on('keypress', function(event) {
-		function logTests() {
-			console.log('**************');
-			var eType = event.type;
-
-			var eWhich = event.which;
-			var eCharCode = event.charCode;
-			var eKeyCode = event.keyCode;
-			console.log('event.which: ' + eWhich);
-			console.log('event.charCode: ' + eCharCode);
-			console.log('event.keyCode: ' + eKeyCode);
-			//console.log('.which: ' + eWhich + ' .charCode: ' + eCharCode + '.keyCode: ' + eKeyCode)
-
-			var string_fcc_charCode = String.fromCharCode(eCharCode);
-			var string_fcc_keyCode = String.fromCharCode(eKeyCode);
-			console.log('String.fromCharCode(charCode):' + string_fcc_charCode);
-			console.log('String.fromCharCode(keyCode): ' + string_fcc_keyCode);
-		}
-		//logTests();		
-
-		switch (event.which) {
-			// = button
-			case 13: // FF: keypad enter (=). Chrome: enter key close to letters
-			case 61: // FF: enter key (close to letters). Chrome: enter key close to backspace
-				var answer = calculate(input);
-				console.log(answer);
-				$('div#display').text(answer);
-				input = '';
-				$('div#display').animate({
-					color: 'white',
-					backgroundColor: 'black'
-				})
-				break;
-
-			// clr button	
-			case 0: // delete key for Firefox
-			case 8: // backspace
-			case 127: // how chrome recognizes delete key
-				input = '';
-				console.log('cleared. input.length = ' + input.length);
-				$('div#display').empty();
-				$('div#display').animate({
-					color: 'black',
-					backgroundColor: 'white'
-				});	
-				break;	
-			case 63: // Question Mark ? key
-				//displayHelp();
-				break;
-			default:
-				doWhenPressed(event);
-				break;
 		}
 	});
 });
