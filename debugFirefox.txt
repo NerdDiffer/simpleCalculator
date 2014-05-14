@@ -1,0 +1,31 @@
+console.log from firefox:
+
+when I press delete key:
+	"event.charCode: 0" 
+	"event.keyCode: 46" 
+	"String.fromCharCode(charCode):"
+	"String.fromCharCode(keyCode): ."
+
+when I press backspace key:
+	"event.charCode: 0" 
+	"event.keyCode: 8" 
+	"String.fromCharCode(charCode):
+	"String.fromCharCode(keyCode):"
+
+when I press equals key (which is next to backspace)	
+	"event.charCode: 61" 
+	"event.keyCode: 0" 
+	"String.fromCharCode(charCode):="
+	"String.fromCharCode(keyCode): "
+
+when I press keypad_enter key
+	"event.charCode: 0" 
+	"event.keyCode: 13" 
+	"String.fromCharCode(charCode):="
+	"String.fromCharCode(keyCode): "
+
+when I press enter key (close to letters)
+	"event.charCode: 0" 
+	"event.keyCode: 13" 
+	"String.fromCharCode(charCode):="
+	"String.fromCharCode(keyCode): "

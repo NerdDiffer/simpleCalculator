@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'SV Basic Manual';
-  src: url('fonts/SVBasicManual.ttf');
+  src: url('../fonts/SVBasicManual.ttf');
   format: ('truetype');
 }
 
 @font-face {
   font-family: 'Unispace';
-  src: url('fonts/unispace rg.ttf');
+  src: url('../fonts/unispace rg.ttf');
   format: ('truetype');
 }
 
 @font-face {
   font-family: 'Calculator';
-  src: url('fonts/Calculator.ttf');
+  src: url('../fonts/Calculator.ttf');
   format: ('truetype');
 }
 
