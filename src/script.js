@@ -60,37 +60,64 @@ function drawCalculator() {
 	}
 }
 
+function calculate(str) {
+	var validChar = /[\d\+\-\*\/\=\%\(\)\.]/g;
+	var answer = eval(str.match(validChar).join(''));	
+	if (answer.toString().length >= 8) {
+		return answer.toFixed(10);
+	} else {
+		return answer;
+	}
+};
+
 // anything inside here will handle calculations and user interaction
 $(document).ready(function() {
 	var input = '';
 	
+/* mouse events */
+
 	// click a number or operation button
  	$('div.nums, div.operation').on('click', function() {
-	input += $(this).text();
+		input += $(this).text();
 		console.log(input);
 		$('div#display').text(input);
 	});
+
 	// click the equals button
 	$('div#19').click(function() {
 		var answer = calculate(input);
 		console.log(answer);
 		$('div#display').text(answer);
+
+		$('div#display').animate({
+			color: 'white',
+			backgroundColor: 'black'
+		})
 	});
+
 	// click the clr button
 	$('div#4').click(function() {
 		input = '';
 		console.log('cleared. input.length = ' + input.length);
 		$('div#display').empty();
+
+		$('div#display').animate({
+			color: 'black',
+			backgroundColor: 'white'
+		});	
 	});
-	function calculate(str) {
-		var validChar = /[\d\+\-\*\/\=\%\(\)\.]/g;
-		var answer = eval(str.match(validChar).join(''));	
-		if (answer.toString().length >= 8) {
-			return answer.toFixed(10);
-		} else {
-			return answer;
-		}
-	};
+
+	// mouse down on any button
+	$('div.nums, div.operation, div.util').mousedown(function() {
+		$(this).addClass('clickActive');
+	});
+
+	// mouse up on any button
+	$('div.nums, div.operation, div.util').mouseup(function() {
+		$(this).removeClass('clickActive');
+	})
+
+/* keyboard events */
 
 	var doWhenPressed = function(e) {
 		var validEvents = [37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
@@ -99,12 +126,7 @@ $(document).ready(function() {
 			input = '';
 			$('div#display').empty();
 		} else {
-
-			// works for chrome:
-			//input += String.fromCharCode(e.keyCode);
-			// works for chrome & firefox:
 			input += String.fromCharCode(e.which)
-			//console.log(input);
 			$('div#display').text(input);
 		}
 	};
@@ -130,19 +152,30 @@ $(document).ready(function() {
 		//logTests();		
 
 		switch (event.which) {
+			// = button
 			case 13: // FF: keypad enter (=). Chrome: enter key close to letters
 			case 61: // FF: enter key (close to letters). Chrome: enter key close to backspace
 				var answer = calculate(input);
 				console.log(answer);
 				$('div#display').text(answer);
 				input = '';
+				$('div#display').animate({
+					color: 'white',
+					backgroundColor: 'black'
+				})
 				break;
+
+			// clr button	
 			case 0: // delete key for Firefox
 			case 8: // backspace
 			case 127: // how chrome recognizes delete key
 				input = '';
 				console.log('cleared. input.length = ' + input.length);
 				$('div#display').empty();
+				$('div#display').animate({
+					color: 'black',
+					backgroundColor: 'white'
+				});	
 				break;	
 			case 63: // Question Mark ? key
 				//displayHelp();

@@ -14,14 +14,14 @@ when I press backspace key:
 	"String.fromCharCode(charCode):
 	"String.fromCharCode(keyCode):"
 
-when I press equals key (which is next to backspace)	
+when I press equals key (next to backspace)	
 	"event.which: 61" 
 	"event.charCode: 61" 
 	"event.keyCode: 0" 
 	"String.fromCharCode(charCode):="
 	"String.fromCharCode(keyCode): "
 
-when I press keypad_enter key
+when I press keypad's enter key
 	"event.which: 13" 
 	"event.charCode: 0" 
 	"event.keyCode: 13" 
