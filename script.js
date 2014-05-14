@@ -75,8 +75,8 @@ $(document).ready(function() {
 	};
 
 	var doWhenPressed = function(e) {
-		var validEvents = [37, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
-		if (validEvents.indexOf(e.charCode) < 0) {
+		var validEvents = [37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+		if (validEvents.indexOf(e.which) < 0) {
 			alert('invalid input. string resetting');
 			input = '';
 			$('div#display').empty();
@@ -85,7 +85,7 @@ $(document).ready(function() {
 			// works for chrome:
 			//input += String.fromCharCode(e.keyCode);
 			// works for chrome & firefox:
-			input += String.fromCharCode(e.charCode)
+			input += String.fromCharCode(e.which)
 			//console.log(input);
 			$('div#display').text(input);
 		}
@@ -95,10 +95,11 @@ $(document).ready(function() {
 		function logTests() {
 			console.log('**************');
 			var eType = event.type;
-			var eWhich = event.which;
 
+			var eWhich = event.which;
 			var eCharCode = event.charCode;
 			var eKeyCode = event.keyCode;
+			console.log('event.which: ' + eWhich);
 			console.log('event.charCode: ' + eCharCode);
 			console.log('event.keyCode: ' + eKeyCode);
 
@@ -110,21 +111,24 @@ $(document).ready(function() {
 			//console.log('.which: ' + eWhich + ' .charCode: ' + eCharCode + '.keyCode: ' + eKeyCode)
 			//console.log('pressed: ' + string_fcc + " " + eType + ": " + eWhich);
 		}
-		logTests();		
+		//logTests();		
 
-		switch (event.charCode) {
-			case 13: // enter (=)
+		switch (event.which) {
+			case 13: // FF: keypad enter (=). Chrome: enter key close to letters
+			case 61: // FF: enter key (close to letters). Chrome: enter key close to backspace
 				var answer = calculate(input);
 				console.log(answer);
 				$('div#display').text(answer);
 				input = '';
 				break;
-			case 127: // delete (clear)
+			case 0: // delete key for Firefox
+			case 8: // backspace
+			case 127: // how chrome recognizes delete key
 				input = '';
 				console.log('cleared. input.length = ' + input.length);
 				$('div#display').empty();
 				break;	
-			case 63:
+			case 63: // Question Mark ? key
 				//displayHelp();
 				break;
 			default:
