@@ -1,12 +1,12 @@
-/* style sheet for mobile devices */
-@media screen and (max-width: 384px) {
-
+@media (max-width: 468px) {
+  html {
+    font-size: 18px;
+  }
+  div#calculator {
+    width: 96%:
+  }
 }
 
-@media screen and (orientation:portrait) {
-
-}
-
-@media screen and (orientation:landscape) {
+@media screen and (orientation: portrait) {
 
 }
