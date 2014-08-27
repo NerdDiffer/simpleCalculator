@@ -79,10 +79,20 @@ div.nums {
 }
 
 /* + - * / = clear */
-div.operation, div#equals, div#clr {
+div.operation {
   background-color:#808080;
 }
 
+div.clickActive {
+  background-color: black; 
+  color: white;
+}
+
+/* clr button and equals button */
+div.util {
+  background-color: #3f3f3f;
+  
+}
 .help {
   outline: 2px dotted red;
   background: green;
