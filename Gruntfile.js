@@ -3,12 +3,17 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     recess: {
       dev: {
-        src: ['styles/style.css', 'styles/responsive.css'],
         options: {
+          compile: true,
           noIDs: false,
           noUnderscores: false
-        }
+        },
+        src: ['dev/less/*.less'],
+        dest: 'pub/styles/styles.css'
       }
+    },
+    jshint: {
+      all: ['dev/src/*.js, Gruntfile.js, package.json']
     },
     watch: {
       recess: {
@@ -24,5 +29,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // tasks
-  grunt.registerTask('default', 'recess:dev');
+  grunt.registerTask('default', 'recess');
 };
