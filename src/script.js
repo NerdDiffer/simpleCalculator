@@ -70,15 +70,9 @@ function calculate(str) {
 	}
 };
 
-
-
 // anything inside here will handle user interaction
 $(document).ready(function() {
 	var input = '';
-	function validateInput(e) {
-		var validEvents = [0, 8, 13, 37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 61, 63, 127];
-		return validEvents.indexOf(e.which) >= 0 ? true: false;
-	}
 	
 /* mouse events */
 
@@ -124,6 +118,10 @@ $(document).ready(function() {
 	})
 
 /* keyboard events */
+	function validateInput(e) {
+		var validEvents = [0, 8, 13, 37, 40, 41, 42, 43, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 61, 63, 127];
+		return validEvents.indexOf(e.which) >= 0 ? true: false;
+	}
 
 	// for console logging keyboard events
 	function logTests() {
