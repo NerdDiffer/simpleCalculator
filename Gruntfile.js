@@ -20,16 +20,31 @@ module.exports = function(grunt) {
     jshint: {
       all: ['Gruntfile.js', 'package.json', 'dev/js/*.js'],
       dev: {
-        src: 'dev/js/*.js' 
+        src: ['dev/js/*.js']
       },
       runner: {
         src: ['Gruntfile.js', 'package.json'] 
       }
     },
+    browserify: {
+      watch: {
+        options: {
+          watch: true,
+          keepAlive: true
+        },
+        files: {
+          'pub/js/script.js': 'dev/js/*.js'
+        }
+      }
+    },
     watch: {
       recess: {
-        //tasks: ,
-        //files: 
+        files: ['dev/less/*.less', '!dev/less/main.less'],
+        tasks: 'recess:lintCompile'
+      },
+      browserify: {
+        files: 'dev/js/*.js',
+        tasks: 'browserify:watch'
       }
     }
   });
@@ -38,7 +53,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-browserify');
 
   // tasks
-  grunt.registerTask('default', ['recess:lintCompile', 'jshint:all']);
+  grunt.registerTask('default', 'watch');
+  grunt.registerTask('test', 'recess:lint', 'jshint:dev');
 };

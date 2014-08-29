@@ -1,21 +1,21 @@
 @font-face {
-  font-family: "Vinea Egypt Bold Italic";
-  src: url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.woff") format("woff"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.ttf") format("truetype"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.svg#svgFontName") format("svg");
+  font-family: 'your font name here!';
+  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
 }
 
 @font-face {
-  font-family: 'SV Basic Manual';
-  src: url('./fonts/SVBasicManual/SVBasicManual.ttf') format('truetype');
+  font-family: 'SVBasicManual';
+  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
 }
 
 @font-face {
   font-family: 'Unispace';
-  src: url('./fonts/unispace/unispace.ttf') format('truetype');
+  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
 }
 
 @font-face {
   font-family: 'Calculator';
-  src: url('./fonts/Calculator/Calculator.ttf') format('truetype');
+  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
 }
 
 body {
