@@ -1,0 +1,62 @@
+#calculator {
+	width: 400px;
+	height: 710px;
+	padding: 10px;
+	margin: 0 auto;
+  margin-top: 50px;
+	border: 2px solid black;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+#row1, #row2, #row3, #row4, #row5 {
+  display: table-row;
+}
+
+#display {
+	width: 100%;
+	height: 108px;
+  overflow: hidden;
+  font-family: 'Calculator', monospace;
+  font-size:100px;
+  line-height: 108px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: text-top;
+	border: 1px solid black;
+}
+
+.button {
+  position: relative;
+  display: table-cell;
+  width:88px;
+  height:108px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.button span {
+  font-family: Unispace, 'SV Basic Manual', monospace;
+	font-size: 2.8em;
+  line-height: 108px;
+}
+
+.nums {
+  background-color:#ccc;
+}
+
+// addition, subtraction, multiplication, division, equals, clear
+.operation {
+  background-color:#808080;
+}
+
+.clickActive {
+  color: white;
+  background-color: black; 
+}
+
+// clr button and equals button
+.util {
+  background-color: #3f3f3f;
+}

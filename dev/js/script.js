@@ -1,5 +1,5 @@
 // use javascript to generate html grid for calculator
-function drawCalculator() {
+function drawCalculatorz() {
 	// stores some html info on each button. 
 	// because of the generative loop in the makeRows function, 
 	//   it's critical that the order of each object in this 'buttons' array remains the same

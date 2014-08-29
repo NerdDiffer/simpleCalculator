@@ -1,0 +1,125 @@
+@font-face {
+  font-family: "Vinea Egypt Bold Italic";
+  src: url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.woff") format("woff"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.ttf") format("truetype"), url("./fonts/vinea_egypt/vinea_egypt_bold_italic-webfont.svg#svgFontName") format("svg");
+}
+
+@font-face {
+  font-family: 'SV Basic Manual';
+  src: url('./fonts/SVBasicManual/SVBasicManual.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Unispace';
+  src: url('./fonts/unispace/unispace.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Calculator';
+  src: url('./fonts/Calculator/Calculator.ttf') format('truetype');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'SV Basic Manual', Unispace, monospace;
+}
+
+.container {
+  width: 860px;
+  padding: 50px;
+  overflow: hidden;
+}
+
+h4 {
+  font-family: 'SV Basic Manual';
+  text-align: right;
+}
+
+p {
+  margin-top: 20px;
+  font-family: 'SV Basic Manual';
+  font-size: .75em;
+}
+
+.help {
+  position: absolute;
+  top: -15px;
+  width: 44px;
+  height: 54px;
+  font-style: italic;
+  background: green;
+  outline: 2px dotted red;
+}
+
+#calculator {
+  width: 400px;
+  height: 710px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 2px solid black;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+
+#row1,
+#row2,
+#row3,
+#row4,
+#row5 {
+  display: table-row;
+}
+
+#display {
+  width: 100%;
+  height: 108px;
+  overflow: hidden;
+  font-family: 'Calculator', monospace;
+  font-size: 100px;
+  line-height: 108px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: text-top;
+  border: 1px solid black;
+}
+
+.button {
+  position: relative;
+  display: table-cell;
+  width: 88px;
+  height: 108px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.button span {
+  font-family: Unispace, 'SV Basic Manual', monospace;
+  font-size: 2.8em;
+  line-height: 108px;
+}
+
+.nums {
+  background-color: #ccc;
+}
+
+.operation {
+  background-color: #808080;
+}
+
+.clickActive {
+  color: white;
+  background-color: black;
+}
+
+.util {
+  background-color: #3f3f3f;
+}
+
+@media (max-width: 540px) {
+  
+}
+
+@media (max-height: 400px) {
+  
+}

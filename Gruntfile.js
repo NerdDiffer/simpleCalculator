@@ -2,18 +2,29 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     recess: {
-      dev: {
+      options: {
+        noIDs: false
+      },
+      lint: {
+        src: ['dev/less/*.less', '!dev/less/main.less' ]
+      },
+      lintCompile: {
         options: {
-          compile: true,
-          noIDs: false,
-          noUnderscores: false
+          compile: true
         },
-        src: ['dev/less/*.less'],
-        dest: 'pub/styles/styles.css'
+        files: {
+          'pub/styles/styles.css': 'dev/less/main.less' 
+        }
       }
     },
     jshint: {
-      all: ['dev/src/*.js, Gruntfile.js, package.json']
+      all: ['Gruntfile.js', 'package.json', 'dev/js/*.js'],
+      dev: {
+        src: 'dev/js/*.js' 
+      },
+      runner: {
+        src: ['Gruntfile.js', 'package.json'] 
+      }
     },
     watch: {
       recess: {
@@ -29,5 +40,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // tasks
-  grunt.registerTask('default', 'recess');
+  grunt.registerTask('default', ['recess:lintCompile', 'jshint:all']);
 };
