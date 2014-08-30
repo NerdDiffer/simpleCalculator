@@ -46,22 +46,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    //browserify: {
-    //  options: {
-    //    watch: true,
-    //    keepAlive: true
-    //  },
-    //  straight: {
-    //    files: {
-    //      'pub/js/script.js': 'dev/js/script.js'
-    //    }
-    //  },
-    //  compile: {
-    //    files: {
-    //      'pub/js/gen-script.js': ['!dev/js/script.js', 'dev/js/sep/*.js']
-    //    }
-    //  }
-    //},
     watch: {
       recess: {
         files: 'dev/less/*.less',
@@ -75,10 +59,6 @@ module.exports = function(grunt) {
         files: ['!dev/js/gen*.js', 'dev/js/input.js', 'dev/js/util.js'],
         tasks: 'concat:inputUtil'
       }
-      //browserify: {
-      //  files: 'dev/js/script.js', 
-      //  tasks: 'browserify:compile'
-      //}
     }
   });
 
@@ -86,7 +66,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  //grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
   // tasks
