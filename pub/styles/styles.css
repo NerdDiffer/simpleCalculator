@@ -1,12 +1,27 @@
+@font-face {
+  font-family: 'sv-basic-manual';
+  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'unispace';
+  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'calculator';
+  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
+}
+
 #calculator {
-  width: 400px;
-  height: 710px;
-  padding: 10px;
+  width: 22.2rem;
+  height: 39.4rem;
+  padding: 0.5rem;
   margin: 0 auto;
   margin-top: 50px;
   border: 2px solid black;
   border-collapse: separate;
-  border-spacing: 8px;
+  border-spacing: 0.5rem;
 }
 
 #row1,
@@ -19,11 +34,11 @@
 
 #display {
   width: 100%;
-  height: 108px;
+  height: 6rem;
   overflow: hidden;
   font-family: 'calculator', monospace;
-  font-size: 100px;
-  line-height: 108px;
+  font-size: 5.5rem;
+  line-height: 6rem;
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,8 +49,8 @@
 .button {
   position: relative;
   display: table-cell;
-  width: 88px;
-  height: 108px;
+  width: 4.9rem;
+  height: 6rem;
   text-align: center;
   border: 1px solid black;
 }
@@ -43,11 +58,11 @@
 .button span {
   font-family: 'unispace';
   font-size: 2.8em;
-  line-height: 108px;
+  line-height: 6rem;
 }
 
 .nums {
-  background-color: #ccc;
+  background-color: #cccccc;
 }
 
 .operation {
@@ -63,12 +78,48 @@
   background-color: #3f3f3f;
 }
 
+@font-face {
+  font-family: 'sv-basic-manual';
+  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'unispace';
+  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'calculator';
+  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
+}
+
 @media (max-width: 540px) {
-  
+  html {
+    font-size: 22px;
+  }
 }
 
 @media (max-height: 400px) {
   
+}
+
+@font-face {
+  font-family: 'sv-basic-manual';
+  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'unispace';
+  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'calculator';
+  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
+}
+
+html {
+  font-size: 18px;
 }
 
 body {
@@ -78,8 +129,8 @@ body {
 }
 
 .container {
-  width: 860px;
-  padding: 50px;
+  width: 100%;
+  padding: 2.8rem;
   overflow: hidden;
 }
 
@@ -88,15 +139,15 @@ h4 {
 }
 
 p {
-  margin-top: 20px;
+  margin-top: 1.1rem;
   font-size: .75em;
 }
 
 .help {
   position: absolute;
-  top: -15px;
-  width: 44px;
-  height: 54px;
+  top: -0.75rem;
+  width: 2.45rem;
+  height: 3rem;
   font-style: italic;
   background: green;
   outline: 2px dotted red;

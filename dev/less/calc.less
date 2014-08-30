@@ -1,15 +1,14 @@
-@calculator: 'calculator';
-@unispace: 'unispace';
+@import 'variables.less';
 
 #calculator {
-	width: 400px;
-	height: 710px;
-	padding: 10px;
+	width: 22.2rem;
+	height: 39.4rem;
+	padding: 0.5rem;
 	margin: 0 auto;
   margin-top: 50px;
 	border: 2px solid black;
   border-collapse: separate;
-  border-spacing: 8px;
+  border-spacing: 0.5rem;
 }
 
 #row1, #row2, #row3, #row4, #row5 {
@@ -18,11 +17,11 @@
 
 #display {
 	width: 100%;
-	height: 108px;
+	height: 6rem;
   overflow: hidden;
   font-family: @calculator, monospace;
-  font-size:100px;
-  line-height: 108px;
+  font-size: 5.5rem;
+  line-height: 6rem;
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -33,8 +32,8 @@
 .button {
   position: relative;
   display: table-cell;
-  width:88px;
-  height:108px;
+  width: 4.9rem;
+  height: 6rem;
   text-align: center;
   border: 1px solid black;
 }
@@ -42,16 +41,16 @@
 .button span {
   font-family: @unispace;
 	font-size: 2.8em;
-  line-height: 108px;
+  line-height: 6rem;
 }
 
 .nums {
-  background-color:#ccc;
+  background-color: @lighter-grey;
 }
 
 // addition, subtraction, multiplication, division, equals, clear
 .operation {
-  background-color:#808080;
+  background-color: @grey;
 }
 
 .clickActive {
@@ -61,5 +60,5 @@
 
 // clr button and equals button
 .util {
-  background-color: #3f3f3f;
+  background-color: @darker-grey;
 }
