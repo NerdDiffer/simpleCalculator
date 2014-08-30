@@ -26,25 +26,10 @@ module.exports = function(grunt) {
         src: ['Gruntfile.js', 'package.json'] 
       }
     },
-    browserify: {
-      watch: {
-        options: {
-          watch: true,
-          keepAlive: true
-        },
-        files: {
-          'pub/js/script.js': 'dev/js/*.js'
-        }
-      }
-    },
     watch: {
       recess: {
         files: ['dev/less/*.less', '!dev/less/main.less'],
         tasks: 'recess:lintCompile'
-      },
-      browserify: {
-        files: 'dev/js/*.js',
-        tasks: 'browserify:watch'
       }
     }
   });
@@ -53,7 +38,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-browserify');
 
   // tasks
   grunt.registerTask('default', 'watch');

@@ -1,38 +1,36 @@
 @base-font-size: 18px;
 @mobile-font-size: 22px;
-
-// example
-@font-face {
-  font-family: 'your font name here!';
-  src: url('.eot?#iefix') format('embedded-opentype'),
-       url('.woff') format('woff'),
-       url('.ttf') format('truetype'),
-       url('.svg#svgFontName') format('svg');
-}
+@font-base-url: './fonts';
 
 @font-face {
-  font-family: 'SVBasicManual';
+  @font: 'sv-basic-manual';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
   //src: url('./fonts/SVBasicManual/SVBasicManual.ttf') format('truetype'),
-  src: url('.eot?#iefix') format('embedded-opentype'),
-       url('.woff') format('woff'),
-       url('.ttf') format('truetype'),
-       url('.svg#svgFontName') format('svg');
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
 }
 
 @font-face {
-  font-family: 'Unispace';
+  @font: 'unispace';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
   //src: url('./fonts/unispace/unispace.ttf') format('truetype'),
-  src: url('.eot?#iefix') format('embedded-opentype'),
-       url('.woff') format('woff'),
-       url('.ttf') format('truetype'),
-       url('.svg#svgFontName') format('svg');
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
 }
 
 @font-face {
-  font-family: 'Calculator';
+  @font: 'calculator';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
   //src: url('./fonts/Calculator/Calculator.ttf') format('truetype'),
-  src: url('.eot?#iefix') format('embedded-opentype'),
-       url('.woff') format('woff'),
-       url('.ttf') format('truetype'),
-       url('.svg#svgFontName') format('svg');
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
 }

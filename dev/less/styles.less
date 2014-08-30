@@ -1,7 +1,14 @@
+@svb: 'sv-basic-manual', 'Arial';
+@unispace: 'unispace', 'Georgia';
+@calculator: 'calculator', 'Mobilize BRK';
+@arial: 'arial';
+@times: 'Times New Roman';
+@mob: 'Mobilize BRK';
+
 body {
   padding: 0;
   margin: 0;
-  font-family: 'SV Basic Manual', Unispace, monospace;
+  font-family: @unispace;
 }
 
 .container {
@@ -11,13 +18,13 @@ body {
 }
 
 h4 {
-  font-family: 'SV Basic Manual';
+  //font-family: @svb;
   text-align:right;
 }
 
 p {
   margin-top: 20px;
-  font-family: 'SV Basic Manual';
+  //font-family: @svb;
   font-size: .75em;
 }
 

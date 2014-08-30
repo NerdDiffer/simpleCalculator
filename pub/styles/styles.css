@@ -1,27 +1,22 @@
 @font-face {
-  font-family: 'your font name here!';
-  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
+  font-family: 'sv-basic-manual';
+  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
 }
 
 @font-face {
-  font-family: 'SVBasicManual';
-  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
+  font-family: 'unispace';
+  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
 }
 
 @font-face {
-  font-family: 'Unispace';
-  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
-}
-
-@font-face {
-  font-family: 'Calculator';
-  src: url('.eot?#iefix') format('embedded-opentype'), url('.woff') format('woff'), url('.ttf') format('truetype'), url('.svg#svgFontName') format('svg');
+  font-family: 'calculator';
+  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: 'SV Basic Manual', Unispace, monospace;
+  font-family: 'unispace', 'Georgia';
 }
 
 .container {
@@ -31,13 +26,11 @@ body {
 }
 
 h4 {
-  font-family: 'SV Basic Manual';
   text-align: right;
 }
 
 p {
   margin-top: 20px;
-  font-family: 'SV Basic Manual';
   font-size: .75em;
 }
 
@@ -74,7 +67,6 @@ p {
   width: 100%;
   height: 108px;
   overflow: hidden;
-  font-family: 'Calculator', monospace;
   font-size: 100px;
   line-height: 108px;
   text-align: right;
@@ -94,7 +86,6 @@ p {
 }
 
 .button span {
-  font-family: Unispace, 'SV Basic Manual', monospace;
   font-size: 2.8em;
   line-height: 108px;
 }
