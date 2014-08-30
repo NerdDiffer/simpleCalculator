@@ -6,14 +6,14 @@ module.exports = function(grunt) {
         noIDs: false
       },
       lint: {
-        src: ['dev/less/*.less', '!dev/less/main.less' ]
+        src: 'dev/less/*.less'
       },
       lintCompile: {
         options: {
           compile: true
         },
         files: {
-          'pub/styles/styles.css': 'dev/less/main.less' 
+          'pub/styles/styles.css': 'dev/less/*.less' 
         }
       }
     },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
     },
     watch: {
       recess: {
-        files: ['dev/less/*.less', '!dev/less/main.less'],
+        files: 'dev/less/*.less',
         tasks: 'recess:lintCompile'
       }
     }
