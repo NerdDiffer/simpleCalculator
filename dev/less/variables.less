@@ -1,0 +1,36 @@
+@base-font-size: 18px;
+@mobile-font-size: 22px;
+@font-base-url: './fonts';
+
+@font-face {
+  @font: 'sv-basic-manual';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
+  //src: url('./fonts/SVBasicManual/SVBasicManual.ttf') format('truetype'),
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  @font: 'unispace';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
+  //src: url('./fonts/unispace/unispace.ttf') format('truetype'),
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  @font: 'calculator';
+  @font-url: '@{font-base-url}/@{font}/@{font}';
+  font-family: @font;
+  //src: url('./fonts/Calculator/Calculator.ttf') format('truetype'),
+  src: url('@{font-url}\.eot?#iefix') format('embedded-opentype'),
+       url('@{font-url}\.woff') format('woff'),
+       url('@{font-url}\.ttf') format('truetype'),
+       url('@{font-url}\.svg#svgFontName') format('svg');
+}
