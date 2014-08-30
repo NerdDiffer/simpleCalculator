@@ -13,15 +13,73 @@
   src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
 }
 
+html {
+  font-size: 18px;
+}
+
+body {
+  padding: 2.8rem;
+  margin: 0;
+  font-family: 'sv-basic-manual';
+}
+
+#container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.info {
+  width: 22.22rem;
+  margin: 1rem auto;
+}
+
+h4 {
+  text-align: right;
+}
+
+p {
+  margin-top: 1.1rem;
+  font-size: .75em;
+}
+
+.help {
+  position: absolute;
+  top: -0.75rem;
+  width: 2.45rem;
+  height: 3rem;
+  font-style: italic;
+  background: green;
+  outline: 2px dotted red;
+}
+
+@font-face {
+  font-family: 'sv-basic-manual';
+  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'unispace';
+  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
+}
+
+@font-face {
+  font-family: 'calculator';
+  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
+}
+
 #calculator {
-  width: 22.2rem;
+  width: 22.22rem;
   height: 39.4rem;
   padding: 0.5rem;
   margin: 0 auto;
-  margin-top: 50px;
+  font-size: 2.8em;
   border: 2px solid black;
   border-collapse: separate;
   border-spacing: 0.5rem;
+}
+
+#calculator > div {
+  width: 100%;
 }
 
 #row1,
@@ -33,7 +91,6 @@
 }
 
 #display {
-  width: 100%;
   height: 6rem;
   overflow: hidden;
   font-family: 'calculator', monospace;
@@ -57,7 +114,6 @@
 
 .button span {
   font-family: 'unispace';
-  font-size: 2.8em;
   line-height: 6rem;
 }
 
@@ -97,60 +153,33 @@
   html {
     font-size: 22px;
   }
+  body {
+    padding: 0.5rem;
+  }
+  #calculator {
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+  #display {
+    font-size: 2rem;
+  }
+  .button {
+    height: 25%;
+    padding: 0.5rem;
+  }
+  .button span {
+    line-height: inherit;
+    vertical-align: middle;
+  }
+  .info {
+    width: 90%;
+  }
 }
 
 @media (max-height: 400px) {
   
-}
-
-@font-face {
-  font-family: 'sv-basic-manual';
-  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
-}
-
-@font-face {
-  font-family: 'unispace';
-  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
-}
-
-@font-face {
-  font-family: 'calculator';
-  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
-}
-
-html {
-  font-size: 18px;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'sv-basic-manual';
-}
-
-.container {
-  width: 100%;
-  padding: 2.8rem;
-  overflow: hidden;
-}
-
-h4 {
-  text-align: right;
-}
-
-p {
-  margin-top: 1.1rem;
-  font-size: .75em;
-}
-
-.help {
-  position: absolute;
-  top: -0.75rem;
-  width: 2.45rem;
-  height: 3rem;
-  font-style: italic;
-  background: green;
-  outline: 2px dotted red;
 }
 
 @font-face {
