@@ -15,8 +15,11 @@
   <div id="container"></div>
   <script type="text/javascript">
     $(document).ready(function() {
-      var isLandscape = 0;
-      genTable(isLandscape);
+      var landscape = isLandscape();
+      genTable(landscape);
+    });
+    $(window).bind('orientationchange', function() {
+       //alert(window.orientation);
     });
   </script> 
 </body>
