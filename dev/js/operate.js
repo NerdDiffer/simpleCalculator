@@ -13,6 +13,16 @@ function validateInput(e) {
 	return validEvents.indexOf(e.which) >= 0 ? true: false;
 }
 
+function getOrientation() {
+  return window.orientation;
+}
+
 function isLandscape() {
-  return window.innerHeight < window.innerWidth;
+  return Math.abs( getOrientation() ) == 90 ? 1 : 0;
+}
+
+function redraw() {
+  //console.log(getOrientation());
+  $('#container').empty();
+  genTable(isLandscape());
 }
