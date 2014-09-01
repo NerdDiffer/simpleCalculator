@@ -3,12 +3,12 @@ var makeCell = function(type, span, id) {
   var d_close = "</span></td>";
   return d_open + span + d_close;
 };
+
 function genTable(isLandscape) {
   var container = $('#container');
   var makeRows = function(fn) {
     var calc = $('#calculator');
     var i = 0;
-    calc.append("<div id='display'></div>");
     isLandscape ? landscapeLoop() : portraitLoop();
     function portraitLoop () {
       var buttons = [
@@ -37,12 +37,13 @@ function genTable(isLandscape) {
         {type: 'util', span: '=', id: 'equals'},
         {type: 'operation', span: '+'},
       ];
+      var cellsPerRow = 4;
+      calc.append("<tr><td colspan='" + cellsPerRow + "' id='display'></td></tr>");
       for (var n = 1; n <= 5; n++) {
-        //calc.append("<div id='row" + n + "'>");
         calc.append("<tr id='row" + n + "'>");
         var row = $('#row' + n);
 
-        for (var j = 1; j <= 4; j++) {
+        for (var j = 1; j <= cellsPerRow; j++) {
           var button = buttons[i];
           row.append(fn(button.type, button.span, button.id));
           i++;
@@ -76,10 +77,12 @@ function genTable(isLandscape) {
         {type: 'operation', span: '.'},
         {type: 'util', span: '=', id: 'equals'}
       ];
+      var cellsPerRow = 7;
+      calc.append("<tr><td colspan='" + cellsPerRow + "' id='display'></td></tr>");
       for (var n = 1; n <= 3; n++) {
         calc.append("<tr id='row" + n + "'>");
         var row = $('#row' + n);
-        for (var j = 1; j <= 7; j++) {
+        for (var j = 1; j <= cellsPerRow; j++) {
           var button;
           if (i == buttonsLandscape.length-1) {
             button = buttonsLandscape[i];
@@ -94,7 +97,7 @@ function genTable(isLandscape) {
         row.append("</tr>");
       } 
       function makeLastButton(type, span, id) {
-        var d_open = "<td colspan='2' class='button lastButton " + type + "' id='" + id + "'><span>";
+        var d_open = "<td colspan='2' class='button " + type + "' id='" + id + "'><span>";
         var d_close = "</span></td>";
         return d_open + span + d_close;
       }
