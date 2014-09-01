@@ -59,10 +59,6 @@ module.exports = function(grunt) {
         files: ['!dev/js/gen*.js', 'dev/js/input.js', 'dev/js/util.js'],
         tasks: 'concat:inputUtil'
       }
-      //browserify: {
-      //  files: 'dev/js/script.js', 
-      //  tasks: 'browserify:compile'
-      //}
     }
   });
 
