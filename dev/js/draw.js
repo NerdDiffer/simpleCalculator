@@ -13,12 +13,12 @@ var writeFooter = function() {
   'Press the \'enter\' key to evaluate your expression.</p>');
 };
 
-function genTable(isLandscape) {
+function genTable(landscape) {
   var container = $('#container');
   var makeRows = function(fn) {
     var calc = $('#calculator');
     var i = 0;
-    isLandscape ? landscapeLoop() : portraitLoop();
+    landscape ? landscapeLoop() : portraitLoop();
     function portraitLoop () {
       var buttons = [
         {type: 'operation', span: '('},
@@ -119,4 +119,18 @@ function genTable(isLandscape) {
   container.append("<div class='info'>");
   writeFooter();
   container.append("</div>"); // end .info
+}
+
+function getOrientation() {
+  return window.orientation;
+}
+
+function isLandscape() {
+  return Math.abs( getOrientation() ) == 90 ? 1 : 0;
+}
+
+function redraw() {
+  //console.log(getOrientation());
+  $('#container').empty();
+  genTable(isLandscape());
 }
