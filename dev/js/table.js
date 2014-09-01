@@ -4,6 +4,15 @@ var makeCell = function(type, span, id) {
   return d_open + span + d_close;
 };
 
+var writeFooter = function() {
+  var link = "<h4>Very simple calculator by <a href='http://www.rafaelespinoza.com' target='_blank'>Rafael Espinoza</a></h4>";
+  var info = $('.info');
+  info.append(link);
+  info.append('<p>Use your keyboard or mouse to write an expression.<br />' + 
+  'Press the \'delete\' key to clear the display. <br />' +
+  'Press the \'enter\' key to evaluate your expression.</p>');
+};
+
 function genTable(isLandscape) {
   var container = $('#container');
   var makeRows = function(fn) {
