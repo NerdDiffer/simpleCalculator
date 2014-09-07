@@ -2,22 +2,34 @@
 
 html {
   font-size: @base-font-size;
+  //@media (max-width: 540px), (max-height: 400px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
+    font-size: @mobile-font-size;
+  }
 }
 
 body {
   padding: 2.8rem;
   margin: 0;
   font-family: @svb;
+  //@media (max-width: 540px), (max-height: 400px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
+    padding: 0.5rem;
+  }
 }
 
 #container {
   width: 100%;
-  overflow:hidden;
+  //overflow:hidden;
 }
 
 .info {
   width: @main-width;
   margin: 1rem auto;
+  //@media (max-width: 540px), (max-width: 400px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
+    width: 90%; 
+  }
 }
 h4 {
   text-align:right;

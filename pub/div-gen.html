@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>table-generated file</title>
+	<title>div-generated file</title>
   <meta charset='utf-8'>
   <meta name='description' content=''>
   <meta name='keywords' content=''>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel='stylesheet' type='text/css' href="styles/styles.css" />
 	<script src="js/jquery-1.11.1.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
@@ -15,11 +15,7 @@
   <div id="container"></div>
   <script type="text/javascript">
     $(document).ready(function() {
-      var initIsLandscape = isLandscape() || 0;
-      genTable(initIsLandscape);
-      $(window).bind('orientationchange', function() {
-        redraw();
-      });
+      genDiv();
     });
   </script> 
 	<script src="js/inputUtil.js"></script>

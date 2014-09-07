@@ -1,5 +1,5 @@
 // use javascript to generate html grid for calculator
-function drawCalculator() {
+function genDiv() {
 	// stores some html info on each button. 
 	// because of the generative loop in the makeRows function, 
 	//   it's critical that the order of each object in this 'buttons' array remains the same
@@ -26,30 +26,35 @@ function drawCalculator() {
 		{type: 'operation', span: '+'},
 	];
 
-	document.write("<div id='container'>");
-		document.write("<div id='calculator'>");
-			makeRows(makeButton);
-			writeFooter();
-		document.write("</div>");
-	document.write("</div>");
+  var container = $('#container');
+  container.append("<div id='calculator'>");
+  makeRows(makeButton);
+  container.append("</div>"); // end #calculator
+  container.append("<div class='info'>");
+  writeFooter();
+  container.append("</div>"); // end .info
 
-	function writeFooter() {
-		document.write('<h4>Very simple calculator by Rafael Espinoza</h4>');
-		document.write('<p>Use your keyboard or mouse to write an expression.<br />');
-		document.write('Press the \'delete\' key to clear the display. <br />');
-		document.write('Press the \'enter\' key to evaluate your expression.</p>');
-	}
+  function writeFooter () {
+    var link = "<h4>Very simple calculator by <a href='http://www.rafaelespinoza.com' target='_blank'>Rafael Espinoza</a></h4>";
+    var info = $('.info');
+    info.append(link);
+    info.append('<p>Use your keyboard or mouse to write an expression.<br />' + 
+    'Press the \'delete\' key to clear the display. <br />' +
+    'Press the \'enter\' key to evaluate your expression.</p>');
+  }
 
 	function makeRows(fn) {
+    var calc = $('#calculator');
 		var id = 1;
-		document.write("<div id='display'></div>");
+		calc.append("<div id='display'></div>");
 		for (var n = 1; n <= 5; n++) {
-			document.write("<div id='row" + n + "'>");
+			calc.append("<div id='row" + n + "'>");
+      var row = $('#row' + n);
 			for (var j = 1; j <= 4; j++) {
-				document.write(fn(id, buttons[id-1].type, buttons[id-1].span));
+				row.append(fn(id, buttons[id-1].type, buttons[id-1].span));
 				id++;
 			}
-			document.write("</div>");
+			row.append("</div>");
 		}
 	}
 

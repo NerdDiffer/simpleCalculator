@@ -14,6 +14,20 @@
     width: 100%; 
     //outline: 2px dashed blue;
   }
+  //@media (max-width: 540px), (max-height: 400px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
+	  width: 96%;
+	  height: 80%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+  //@media (orientation: portrait) {
+  //  background-color: red; 
+  //}
+
+  //@media (orientation: landscape) {
+  //  background-color: green; 
+  //}
 }
 
 #row1, #row2, #row3, #row4, #row5 {
@@ -31,6 +45,13 @@
   white-space: nowrap;
   vertical-align: text-top;
 	border: 1px solid black;
+
+  //@media (max-width: 540px), (max-height: 400px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
+    font-size: 2rem;
+    height: 3rem;
+    line-height:3rem;
+  }
 }
 
 .button {
@@ -41,29 +62,48 @@
   text-align: center;
   border: 1px solid black;
 
+  //@media (max-width: 540px) {
+  @media (max-width: @base-portrait-width) and (orientation: portrait) {
+    height:25%;
+    padding: 0.5rem;
+  }
+  //@media (max-height: 448px) {
+  @media (max-height: @base-landscape-height) and (orientation: landscape) {
+    height: inherit;
+  }
+
   // text inside of any button
   & span {
     font-family: @unispace;
     line-height: 6rem;
+    //@media (max-width: 540px) {
+    @media (max-width: @base-portrait-width) and (orientation: portrait) {
+      line-height: 3rem;
+      vertical-align: middle;
+    }
+    //@media (max-height: 400px) {
+    @media (max-height: @base-landscape-height) and (orientation: landscape) {
+      line-height: 3rem; 
+    }
   }
 }
 
 // any number
-&.nums {
+.nums {
   background-color: @lighter-grey;
 }
 
 // addition, subtraction, multiplication, division, equals, clear
-&.operation {
+.operation {
   background-color: @grey;
 }
 
-&.clickActive {
+.clickActive {
   color: white;
   background-color: black; 
 }
 
 // clr button and equals button
-&.util {
+.util {
   background-color: @darker-grey;
 }

@@ -17,20 +17,37 @@ html {
   font-size: 18px;
 }
 
+@media (max-width: 540px) and (orientation: portrait), (max-height: 448px) and (orientation: landscape) {
+  html {
+    font-size: 22px;
+  }
+}
+
 body {
   padding: 2.8rem;
   margin: 0;
   font-family: 'sv-basic-manual';
 }
 
+@media (max-width: 540px) and (orientation: portrait), (max-height: 448px) and (orientation: landscape) {
+  body {
+    padding: 0.5rem;
+  }
+}
+
 #container {
   width: 100%;
-  overflow: hidden;
 }
 
 .info {
   width: 22.22rem;
   margin: 1rem auto;
+}
+
+@media (max-width: 540px) and (orientation: portrait), (max-height: 448px) and (orientation: landscape) {
+  .info {
+    width: 90%;
+  }
 }
 
 h4 {
@@ -82,6 +99,15 @@ p {
   width: 100%;
 }
 
+@media (max-width: 540px) and (orientation: portrait), (max-height: 448px) and (orientation: landscape) {
+  #calculator {
+    width: 96%;
+    height: 80%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+}
+
 #row1,
 #row2,
 #row3,
@@ -103,6 +129,14 @@ p {
   border: 1px solid black;
 }
 
+@media (max-width: 540px) and (orientation: portrait), (max-height: 448px) and (orientation: landscape) {
+  #display {
+    height: 3rem;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
 .button {
   position: relative;
   display: table-cell;
@@ -112,9 +146,35 @@ p {
   border: 1px solid black;
 }
 
+@media (max-width: 540px) and (orientation: portrait) {
+  .button {
+    height: 25%;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-height: 448px) and (orientation: landscape) {
+  .button {
+    height: inherit;
+  }
+}
+
 .button span {
   font-family: 'unispace';
   line-height: 6rem;
+}
+
+@media (max-width: 540px) and (orientation: portrait) {
+  .button span {
+    line-height: 3rem;
+    vertical-align: middle;
+  }
+}
+
+@media (max-height: 448px) and (orientation: landscape) {
+  .button span {
+    line-height: 3rem;
+  }
 }
 
 .nums {
@@ -134,48 +194,8 @@ p {
   background-color: #3f3f3f;
 }
 
-@font-face {
-  font-family: 'sv-basic-manual';
-  src: url('./fonts/sv-basic-manual/sv-basic-manual\.eot?#iefix') format('embedded-opentype'), url('./fonts/sv-basic-manual/sv-basic-manual\.woff') format('woff'), url('./fonts/sv-basic-manual/sv-basic-manual\.ttf') format('truetype'), url('./fonts/sv-basic-manual/sv-basic-manual\.svg#svgFontName') format('svg');
-}
-
-@font-face {
-  font-family: 'unispace';
-  src: url('./fonts/unispace/unispace\.eot?#iefix') format('embedded-opentype'), url('./fonts/unispace/unispace\.woff') format('woff'), url('./fonts/unispace/unispace\.ttf') format('truetype'), url('./fonts/unispace/unispace\.svg#svgFontName') format('svg');
-}
-
-@font-face {
-  font-family: 'calculator';
-  src: url('./fonts/calculator/calculator\.eot?#iefix') format('embedded-opentype'), url('./fonts/calculator/calculator\.woff') format('woff'), url('./fonts/calculator/calculator\.ttf') format('truetype'), url('./fonts/calculator/calculator\.svg#svgFontName') format('svg');
-}
-
 @media (max-width: 540px) {
-  html {
-    font-size: 22px;
-  }
-  body {
-    padding: 0.5rem;
-  }
-  #calculator {
-    width: 90%;
-    height: 80%;
-    margin: 0 auto;
-    font-size: 1.3rem;
-  }
-  #display {
-    font-size: 2rem;
-  }
-  .button {
-    height: 25%;
-    padding: 0.5rem;
-  }
-  .button span {
-    line-height: inherit;
-    vertical-align: middle;
-  }
-  .info {
-    width: 90%;
-  }
+  
 }
 
 @media (max-height: 400px) {
