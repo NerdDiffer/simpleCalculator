@@ -1,18 +1,18 @@
-@import 'variables.less';
+@import (reference) "variables.less";
 
-#calculator {
+.calculator {
   width: @main-width;
 	height: 39.4rem;
   padding: 0.5rem;
 	margin: 0 auto;
  	font-size: 2.8em;
-	border: 2px solid black;
+  background-color: @calculator-color;
   border-collapse: separate;
   border-spacing: 0.5rem;
+  border-radius: 1rem;
 
   & > div {
     width: 100%; 
-    //outline: 2px dashed blue;
   }
   //@media (max-width: 540px), (max-height: 400px) {
   @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
@@ -21,20 +21,13 @@
     margin: 0 auto;
     font-size: 1.3rem;
   }
-  //@media (orientation: portrait) {
-  //  background-color: red; 
-  //}
-
-  //@media (orientation: landscape) {
-  //  background-color: green; 
-  //}
 }
 
-#row1, #row2, #row3, #row4, #row5 {
+.row1, .row2, .row3, .row4, .row5 {
   display: table-row;
 }
 
-#display {
+.display {
 	height: 6rem;
   overflow: hidden;
   font-family: @calculator, monospace;
@@ -44,7 +37,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: text-top;
-	border: 1px solid black;
+  background-color: white;
+  border-radius: 0.5rem;
 
   //@media (max-width: 540px), (max-height: 400px) {
   @media (max-width: @base-portrait-width) and (orientation: portrait), (max-height: @base-landscape-height) and (orientation: landscape) {
@@ -60,7 +54,7 @@
   width: 4.9rem;
   height: 6rem;
   text-align: center;
-  border: 1px solid black;
+  border-radius: 0.5rem;
 
   //@media (max-width: 540px) {
   @media (max-width: @base-portrait-width) and (orientation: portrait) {

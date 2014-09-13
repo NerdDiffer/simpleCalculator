@@ -14,9 +14,9 @@ var writeFooter = function() {
 };
 
 function genTable(landscape) {
-  var container = $('#container');
+  var container = $('.container');
   var makeRows = function(fn) {
-    var calc = $('#calculator');
+    var calc = $('.calculator');
     var i = 0;
     landscape ? landscapeLoop() : portraitLoop();
     function portraitLoop () {
@@ -47,10 +47,10 @@ function genTable(landscape) {
         {type: 'operation', span: '+'},
       ];
       var cellsPerRow = 4;
-      calc.append("<tr><td colspan='" + cellsPerRow + "' id='display'></td></tr>");
+      calc.append("<tr><td colspan='" + cellsPerRow + "' class='display'></td></tr>");
       for (var n = 1; n <= 5; n++) {
-        calc.append("<tr id='row" + n + "'>");
-        var row = $('#row' + n);
+        calc.append("<tr class='row" + n + "'>");
+        var row = $('.row' + n);
 
         for (var j = 1; j <= cellsPerRow; j++) {
           var button = buttons[i];
@@ -87,10 +87,10 @@ function genTable(landscape) {
         {type: 'util', span: '=', id: 'equals'}
       ];
       var cellsPerRow = 7;
-      calc.append("<tr><td colspan='" + cellsPerRow + "' id='display'></td></tr>");
+      calc.append("<tr><td colspan='" + cellsPerRow + "' class='display'></td></tr>");
       for (var n = 1; n <= 3; n++) {
-        calc.append("<tr id='row" + n + "'>");
-        var row = $('#row' + n);
+        calc.append("<tr class='row" + n + "'>");
+        var row = $('.row' + n);
         for (var j = 1; j <= cellsPerRow; j++) {
           var button;
           if (i == buttonsLandscape.length-1) {
@@ -113,9 +113,9 @@ function genTable(landscape) {
     }
   };
 
-  container.append("<table id='calculator'>");
+  container.append("<table class='calculator'>");
   makeRows(makeCell);
-  container.append("</table>"); // end #calculator
+  container.append("</table>"); // end .calculator
   container.append("<div class='info'>");
   writeFooter();
   container.append("</div>"); // end .info
@@ -131,6 +131,6 @@ function isLandscape() {
 
 function redraw() {
   //console.log(getOrientation());
-  $('#container').empty();
+  $('.container').empty();
   genTable(isLandscape());
 }

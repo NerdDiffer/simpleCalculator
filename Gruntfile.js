@@ -1,19 +1,19 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    recess: {
-      options: {
-        noIDs: false
-      },
+    lesslint: {
       lint: {
         src: 'dev/less/*.less'
       },
-      lintCompile: {
-        options: {
-          compile: true
-        },
+    },
+    less: {
+      options: {
+        path: 'dev/less',
+        cleancss: true,
+      },
+      compile: {
         files: {
-          'pub/styles/styles.css': 'dev/less/*.less' 
+          'pub/styles/styles.css': ['dev/less/variables.less', 'dev/less/styles.less', 'dev/less/calc.less']
         }
       }
     },
@@ -30,14 +30,9 @@ module.exports = function(grunt) {
       options: {
 
       },
-      allFiles: {
+      generate: {
         files: {
-          'pub/js/script.js': ['dev/js/genTable.js', 'dev/js/genDiv.js', 'dev/js/util.js', 'dev/js/input.js']
-        }
-      },
-      genCalc: {
-        files: {
-          'pub/js/generate.js': ['dev/js/genTable.js', 'dev/js/genDiv.js']
+          'pub/js/generate.js': 'dev/js/genTable.js'
         }
       },
       inputUtil: {
@@ -47,13 +42,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      recess: {
+      lessCompile: {
         files: 'dev/less/*.less',
-        tasks: 'recess:lintCompile'
+        tasks: ['lesslint:lint', 'less:compile']
       }, 
-      genCalc: {
+      generate: {
         files: 'dev/js/gen*.js',
-        tasks: 'concat:genCalc' 
+        tasks: 'concat:generate' 
       }, 
       inputUtil: {
         files: ['!dev/js/gen*.js', 'dev/js/input.js', 'dev/js/util.js'],
@@ -63,12 +58,13 @@ module.exports = function(grunt) {
   });
 
   // load plugins
-  grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-lesslint');
 
   // tasks
   grunt.registerTask('default', 'watch');
-  grunt.registerTask('test', 'recess:lint', 'jshint:dev');
+  grunt.registerTask('test', 'lesslint:lint', 'jshint:dev');
 };
