@@ -1,3 +1,7 @@
 node_modules/
 .fuse_hidden*
 *.swp
+
+# ignore built scripts
+pub/js/generate.js
+pub/js/inputUtil.js

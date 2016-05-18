@@ -18,6 +18,7 @@ function genTable(landscape) {
   var makeRows = function(fn) {
     var calc = $('.calculator');
     var i = 0;
+    /* jshint expr: true */
     landscape ? landscapeLoop() : portraitLoop();
     function portraitLoop () {
       var buttons = [

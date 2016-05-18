@@ -1,61 +1,9 @@
-module.exports = function(grunt) {
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    lesslint: {
-      lint: {
-        src: 'dev/less/*.less'
-      },
-    },
-    less: {
-      options: {
-        path: 'dev/less',
-        cleancss: true,
-      },
-      compile: {
-        files: {
-          'pub/styles/styles.css': ['dev/less/variables.less', 'dev/less/styles.less', 'dev/less/calc.less']
-        }
-      }
-    },
-    jshint: {
-      all: ['Gruntfile.js', 'package.json', 'dev/js/*.js'],
-      dev: {
-        src: ['dev/js/*.js']
-      },
-      runner: {
-        src: ['Gruntfile.js', 'package.json'] 
-      }
-    },
-    concat: {
-      options: {
+var tasks = require('./lib/tasks');
 
-      },
-      generate: {
-        files: {
-          'pub/js/generate.js': 'dev/js/genTable.js'
-        }
-      },
-      inputUtil: {
-        files: {
-          'pub/js/inputUtil.js': ['dev/js/util.js', 'dev/js/input.js']
-        }
-      }
-    },
-    watch: {
-      lessCompile: {
-        files: 'dev/less/*.less',
-        tasks: ['lesslint:lint', 'less:compile']
-      }, 
-      generate: {
-        files: 'dev/js/gen*.js',
-        tasks: 'concat:generate' 
-      }, 
-      inputUtil: {
-        files: ['!dev/js/gen*.js', 'dev/js/input.js', 'dev/js/util.js'],
-        tasks: 'concat:inputUtil'
-      }
-    }
-  });
+module.exports = function(grunt) {
+  var taskConfig = tasks();
+  taskConfig.pkg = grunt.file.readJSON('package.json');
+  grunt.initConfig(taskConfig);
 
   // load plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -66,5 +14,14 @@ module.exports = function(grunt) {
 
   // tasks
   grunt.registerTask('default', 'watch');
-  grunt.registerTask('test', 'lesslint:lint', 'jshint:dev');
+  grunt.registerTask('lint', [
+    'lesslint:lint',
+    'jshint:dev'
+  ]);
+  grunt.registerTask('build', [
+    'lint',
+    'less:compile',
+    'concat:generate',
+    'concat:inputUtil'
+  ]);
 };

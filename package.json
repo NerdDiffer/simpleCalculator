@@ -4,17 +4,16 @@
   "version": "0.1.2",
   "private": true,
   "scripts": {
+    "prestart": "grunt build",
     "start": "node ./bin/www"
   },
+  "main": "index.js",
   "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "~1.3.0",
-    "less-middleware": "1.0.x"
+    "express": "~4.2.0",
+    "less-middleware": "1.0.x",
+    "morgan": "~1.0.0",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

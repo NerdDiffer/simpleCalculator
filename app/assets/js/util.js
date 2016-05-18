@@ -1,5 +1,6 @@
 function calculate(str) {
 	var validChar = /[\d\+\-\*\/\=\%\(\)\.]/g;
+  /* jshint evil: true */
 	var answer = eval(str.match(validChar).join(''));	
 	if (answer.toString().length >= 8) {
 		return answer.toFixed(10);
